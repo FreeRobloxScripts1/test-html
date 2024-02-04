@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: linear-gradient(135deg, #FF8C00, #FF69B4);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+    }
+
+    .sidebar {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      width: 200px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: 100vh;
+      padding: 20px;
+      width: 100%;
+    }
+
+    .username {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 10px;
+    }
+
+    .description {
+      color: #ffffff;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .button {
+      background-color: #ffffff;
+      color: #FF8C00;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+      background-color: #FF69B4;
+      color: #ffffff;
+    }
+
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #ffffff;
+      color: #FF8C00;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <!-- Add sidebar content here -->
+    <div class="username">Astrolynx</div>
+    <button class="button" onclick="goToHome()">Home</button>
+    <button class="button" onclick="goToCreditPage()">Credit</button>
+    <button class="button" onclick="goToFeedbackPage()">Social</button>
+  </div>
+
+  <div class="container">
+    <!-- Main content here -->
+    <div class="username">Social</div>
+    <div class="description">Our social media links</div>
+    <div class="button-container">
+      <button class="button" onclick="goToLink('https://discord.com/invite/Thycr8xZE2')">My Discord Server ‎ ‎ ‎ ‎ ‎ </button>
+      <button class="button" onclick="goToLinkAndRemoveOthers('https://youtube.com/@ItsFire_1?si=SBBHbHi_9-iALEJ-')">My Youtube Channel</button>
+      <button class="button" onclick="goToLink1('https://discord.com/channels/@me/939153063996956702')">My Discord Profile‎ ‎ ‎ ‎ ‎ </button>
+    </div>
+  </div>
+
+  <div class="notification" id="notification"></div>
+
+  <script>
+    function goToLink(link) {
+      var notification = document.getElementById("notification");
+      notification.textContent = "Directing to Discord...";
+      notification.style.display = "block";
+
+      // Hide the notification after a delay (e.g., 3 seconds)
+      setTimeout(function() {
+        notification.style.display = "none";
+        window.location.href = link;
+      }, 3000);
+    }
+
+    function goToLinkAndRemoveOthers(link) {
+      var notification = document.getElementById("notification");
+      notification.textContent = "Directing to YouTube...";
+      notification.style.display = "block";
+
+      // Hide the notification after a delay (e.g., 3 seconds)
+      setTimeout(function() {
+        notification.style.display = "none";
+        window.location.href = link;
+        var buttonContainer = document.querySelector('.button-container');
+        buttonContainer.innerHTML = '<button class="button">Youtube</button>';
+      }, 3000);
+    }
+
+    function goToLink1(link) {
+      var notification = document.getElementById("notification");
+      notification.textContent = "Directing to Discord...";
+      notification.style.display = "block";
+
+      // Hide the notification after a delay (e.g., 3 seconds)
+      setTimeout(function() {
+        notification.style.display = "none";
+        window.location.href = link;
+        var buttonContainer = document.querySelector('.button-container');
+        buttonContainer.innerHTML = '<button class="button">Discord Profile</button>';
+      }, 3000);
+    }
+
+    function goToHome() {
+      // Redirect to the main page
+      window.location.href = 'home';
+    }
+
+    function goToCreditPage() {
+      // Redirect to the credit page
+      window.location.href = 'credit';
+    }
+
+    function goToFeedbackPage() {
+      // Redirect to the feedback page
+      window.location.href = '#';
+    }
+  </script>
+</body>
+</html>
