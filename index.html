@@ -96,8 +96,8 @@
     <!-- Add sidebar content here -->
     <div class="username">Astrolynx</div>
     <button class="button" onclick="goToHome()">Home</button>
+    <button class="button" onclick="goToFeedbackPage()">Social</button>    
     <button class="button" onclick="goToCreditPage()">Credit</button>
-    <button class="button" onclick="goToFeedbackPage()">Social</button>
   </div>
 
   <div class="container">
@@ -144,15 +144,14 @@
       // Redirect to the main page
       window.location.href = 'home;
     }
-
-    function goToCreditPage() {
-      // Redirect to the credit page
-      window.location.href = 'credit';
-    }
-
     function goToFeedbackPage() {
       // Redirect to the feedback page
       window.location.href = 'feedback';
+    }
+    
+    function goToCreditPage() {
+      // Redirect to the credit page
+      window.location.href = 'credit';
     }
   </script>
 </body>
