@@ -1,7 +1,7 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Astrolynx - Home</title>
   <style>
     body {
       background: linear-gradient(135deg, #FF8C00, #FF69B4);
@@ -9,12 +9,6 @@
       margin: 0;
       padding: 0;
       display: flex;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      -o-user-select: none;
-      user-select: none;
     }
 
     .sidebar {
@@ -94,8 +88,8 @@
     <!-- Add sidebar content here -->
     <div class="username">Astrolynx</div>
     <button class="button" onclick="goToHome()">Home</button>
-    <button class="button" onclick="goToFeedbackPage()">Socials</button>    
     <button class="button" onclick="goToCreditPage()">Credit</button>
+    <button class="button" onclick="goToFeedbackPage()">Social</button>
   </div>
 
   <div class="container">
@@ -140,16 +134,17 @@
 
     function goToHome() {
       // Redirect to the main page
-      window.location.href = '#;
+      window.location.href = 'index.html';
     }
-    function goToFeedbackPage() {
-      // Redirect to the feedback page
-      window.location.href = 'socials.html';
-    }
-    
+
     function goToCreditPage() {
       // Redirect to the credit page
-      window.location.href = 'credits';
+      window.location.href = 'credit.html';
+    }
+
+    function goToFeedbackPage() {
+      // Redirect to the feedback page
+      window.location.href = 'feedback.html';
     }
   </script>
 </body>
